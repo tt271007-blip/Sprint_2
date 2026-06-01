@@ -1,1 +1,8 @@
-ru\yandex\praktikum\HelloMaven.class
+model\Apple.class
+main.class
+model\constants\Discount.class
+model\Food.class
+service\ShoppingCart.class
+model\constants\Colour.class
+model\Discountable.class
+model\Meet.class
