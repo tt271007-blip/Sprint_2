@@ -1,8 +1,0 @@
-import org.junit.test;
-public class HelloMavenTest {
-
-    @test
-    public void testPrintln() {
-        System.out.println("I'm a test for HelloMaven project");
-    }
-}
