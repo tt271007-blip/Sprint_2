@@ -1,9 +1,9 @@
 package model;
-import model.constants.Colour;
-import model.Apple;
-import static model.constants.Colour.RED;
 
-public abstract  class Food {
+
+import static model.constants.Discount.SALE;
+
+public  class Food implements Discountable {
 
     public Integer amount;
     public Double price;
@@ -21,23 +21,17 @@ public abstract  class Food {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
 
     public Double getPrice() {
         return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
     }
 
     public Boolean getVegetarian() {
         return isVegetarian;
     }
 
-    public void setVegetarian(Boolean vegetarian) {
-        isVegetarian = vegetarian;
+    @Override
+    public Double getDiscount(Double price) {
+        return price * SALE;
     }
 }

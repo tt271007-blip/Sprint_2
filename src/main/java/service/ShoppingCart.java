@@ -1,28 +1,15 @@
 package service;
-import model.Discountable;
 import model.Food;
-import model.constants.Discount;
 
 public class ShoppingCart {
 
     public Food[] items;
-    private Discountable discountable;
 
     public ShoppingCart(Food[] items) {
         this.items = items;
-        this.discountable = new Discount();
     }
 
-    public Food[] getItems() {
-        return items;
-    }
-
-    public void setItems(Food[] items) {
-        this.items = items;
-    }
-
-
-    public Double totalPrice() {
+    public Double totalPrice(Food[] items) {
         double sum = 0.0;
         for (Food food: items) {
             sum += food.getAmount() * food.getPrice();
@@ -30,7 +17,7 @@ public class ShoppingCart {
         return sum;
     }
 
-    public Double totalPriceDiscount() {
+    public Double totalPriceDiscount(Food[] items) {
         double sum = 0.0;
         for (Food food: items) {
             sum += food.getAmountSale();
@@ -38,7 +25,7 @@ public class ShoppingCart {
         return sum;
     }
 
-    public Double totalWegeterianSum(){
+    public Double totalWegeterianSum(Food[] items){
         double sum = 0.0;
         for (Food food: items) {
             if (food.getVegetarian()) {
